@@ -5,7 +5,13 @@ const appGlobo = Vue.crearApp({
     }
   }
 })
-
+const appFollow = Vue.createApp({
+  data (){
+    return {
+      texto: 'seguir'
+    }
+  }
+})
 function MSeguir() {
     var btn = document.getElementById("btnSeguir");
     if (btn.innerHTML == "Seguir") {
