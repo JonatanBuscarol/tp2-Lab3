@@ -3,18 +3,14 @@
     <head>
 
         <link href="style.css" rel="stylesheet">
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Globo</title>
+        
 
     </head>
     <body>
-      <div id="app"></div>
-      <script src="script.js"></script>
-
-      <script>
-        const conectandoApp = appGlobo.mount('#app')
-      </script>
-
-        <title>www.Globo.com</title>
+      <div id="app">
+        
+        
 
         <img class = "imagen-1"src="https://i.imgur.com/Qx8uR89.png">
         
@@ -26,7 +22,7 @@
 
         <div id="informacion-personal">
         <img  class = "imagen-2" src="https://i.imgur.com/99qgQJy.jpeg" alt="Foto de perfil: Jane Doe">
-        <button id="btnSeguir" onclick="MSeguir()">Seguir</button>
+        <button id="btnSeguir" @click="seguir">{{ boton }}</button>
           <div id="informacion">
             
             <h1>{{ usuario }}</h1>
@@ -39,9 +35,9 @@
             <p><strong>Ciudad:</strong>
               Tokio, Japón </p>
             <p><em>Trabajando en: </em><strong>Lawn N</strong></h5></p>
-
           </div>
-        </div>
+          </div>
+        
 
         <br>
         <br>
@@ -52,7 +48,7 @@
 
          <br>
 
-          <button id="btnMegusta" onclick="Megusta()">Me gusta</button><strong></strong><h4 id="Contadormg">200</h4></strong>
+          <button id="btnMegusta" @click="like">Me gusta</button>{{numero}}
 
           <p><h4>Comentarios</h4></p>
           <p><strong>Tomás Olocco</strong>
@@ -68,12 +64,14 @@
             <input id="Comentarios" type="text" placeholder="Dejá tu comentario...">
           <button id="btnComentar"type ="submit">Comentar</button></form>
         </div> 
-
+      </div>
         <br>
 
         <div id="sobre-mi">
           <p><h4>Sobre mí: </h4></p>
             Hola! Soy Jane y actualmente vivo en Japón, pero originria de Argentina. Soy fotógrafa y me encanta capturar paisajes urbanos, explorando el contraste entre la arquitectura moderna y las tradiciones centenarias que conviven en la gran metrópolis de Tokio, en la que encuentro inspiración en cada rincón.
         </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
