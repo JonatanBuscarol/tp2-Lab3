@@ -3,18 +3,14 @@
     <head>
 
         <link href="style.css" rel="stylesheet">
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Globo</title>
+        
 
     </head>
     <body>
-      <div id="app"></div>
-      <script src="script.js"></script>
-
-      <script>
-        const conectandoApp = appGlobo.mount('#app')
-      </script>
-
-        <title>www.Globo.com</title>
+      <div id="app">
+        
+        
 
         <img class = "imagen-1"src="https://i.imgur.com/Qx8uR89.png">
         
@@ -26,7 +22,7 @@
 
         <div id="informacion-personal">
         <img  class = "imagen-2" src="https://i.imgur.com/99qgQJy.jpeg" alt="Foto de perfil: Jane Doe">
-        <button id="btnSeguir" onclick="MSeguir()">Seguir</button>
+        <button id="btnSeguir" @click="seguir">{{ boton }}</button>
           <div id="informacion">
             
             <h1>{{ usuario }}</h1>
@@ -39,7 +35,7 @@
             <p><strong>Ciudad:</strong>
               Tokio, Japón </p>
             <p><em>Trabajando en: </em><strong>Lawn N</strong></h5></p>
-
+          </div>
           </div>
         </div>
 
@@ -75,5 +71,7 @@
           <p><h4>Sobre mí: </h4></p>
             Hola! Soy Jane y actualmente vivo en Japón, pero originria de Argentina. Soy fotógrafa y me encanta capturar paisajes urbanos, explorando el contraste entre la arquitectura moderna y las tradiciones centenarias que conviven en la gran metrópolis de Tokio, en la que encuentro inspiración en cada rincón.
         </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
