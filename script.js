@@ -1,7 +1,8 @@
-const appGlobo = Vue.crearApp({
+const appGlobo = Vue.createApp({
   data (){
     return {
-      usuario: 'Jane Doe'
+      usuario: 'Jane Doe',
+      boton: 'Seguir'
     }
   }
 })
