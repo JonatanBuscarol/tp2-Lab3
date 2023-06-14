@@ -3,33 +3,29 @@
     <head>
 
         <link href="style.css" rel="stylesheet">
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Globo</title>
+        
 
     </head>
     <body>
-      <div id="app"></div>
-      <script src="script.js"></script>
-
-      <script>
-        const conectandoApp = appGlobo.mount('#app')
-      </script>
-
-        <title>www.Globo.com</title>
+      <div id="app">
+        
+        
 
         <img class = "imagen-1"src="https://i.imgur.com/Qx8uR89.png">
         
         <br>
 
         <div>
-            <input id="IngresarUsuario" type="text" placeholder="Ingrese su usuario..." onkeydown="if(event.keyCode == 13) { IngresarNombre(event); }">
+            <input id="IngresarUsuario" type="text" placeholder="Ingrese su usuario..." v-model="usuario">
         </div>
 
         <div id="informacion-personal">
         <img  class = "imagen-2" src="https://i.imgur.com/99qgQJy.jpeg" alt="Foto de perfil: Jane Doe">
-        <button id="btnSeguir" onclick="MSeguir()">Seguir</button>
+        <button id="btnSeguir" @click="seguir">{{ boton }}</button>
           <div id="informacion">
             
-            <h1>{{ usuario }}</h1>
+            <h1>{{ nombre }}</h1>
             <p><h5><strong>Email:</strong> 
                 jane_doe@email.com</p>
             <p><strong>Fecha de nacimiento:</strong>
@@ -39,9 +35,9 @@
             <p><strong>Ciudad:</strong>
               Tokio, Japón </p>
             <p><em>Trabajando en: </em><strong>Lawn N</strong></h5></p>
-
           </div>
-        </div>
+          </div>
+        
 
         <br>
         <br>
@@ -52,28 +48,35 @@
 
          <br>
 
-          <button id="btnMegusta" onclick="Megusta()">Me gusta</button><strong></strong><h4 id="Contadormg">200</h4></strong>
+          <button id="btnMegusta" @click="like">Me gusta</button>{{numero}}
 
           <p><h4>Comentarios</h4></p>
           <p><strong>Tomás Olocco</strong>
             WOW Tokio es impresionante!!</p>
 
           <p><strong>Ignacio Gutierres</strong>
-            Esa foto de Tokio es simplemente espectacular. Me trae tantos recuerdos...</strong><p>
+            Esa foto de Tokio es simplemente espectacular. Me trae tantos recuerdos...<p>
 
-          <p><strong>Agustín Ruatta</strong><small> ¡Espero poder viajar a Tokio algún día!</small>
+          <p><strong>Agustín Ruatta</strong> ¡Espero poder viajar a Tokio algún día!</p>
+            
+              
+            
             <button id= "btnEliminarComentario" type ="submit">Eliminar</button></p>
-            <form onsubmit="AgregarComentarios(event)">
+            <p v-for="comentario in comentarios" :key="comentario">{{ comentario }}</p>
+            <form @submit.prevent="agregarComentario">
             <div id="SeccionComentarios"></div>
-            <input id="Comentarios" type="text" placeholder="Dejá tu comentario...">
+            <input id="Comentarios" type="text" placeholder="Dejá tu comentario..." v-model="mensaje">
           <button id="btnComentar"type ="submit">Comentar</button></form>
+          <h3>{{ error }}</h3>
         </div> 
-
+      </div>
         <br>
 
         <div id="sobre-mi">
           <p><h4>Sobre mí: </h4></p>
             Hola! Soy Jane y actualmente vivo en Japón, pero originria de Argentina. Soy fotógrafa y me encanta capturar paisajes urbanos, explorando el contraste entre la arquitectura moderna y las tradiciones centenarias que conviven en la gran metrópolis de Tokio, en la que encuentro inspiración en cada rincón.
         </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
