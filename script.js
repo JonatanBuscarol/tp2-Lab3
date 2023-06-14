@@ -1,21 +1,23 @@
-const appGlobo = Vue.crearApp({
+const appGlobo = Vue.createApp({
   data (){
     return {
-      usuario: 'Jane Doe'
+      usuario: 'Jane Doe',
+      boton: 'Seguir',
+      siguiendo: false
+    }
+  },
+  methods: {
+    seguir() {
+      if (this.siguiendo) {
+        this.boton = "Seguir";
+      } else {
+        this.boton = "Dejar de seguir";
+      }
+      this.siguiendo = !this.siguiendo;
     }
   }
 })
-
-function MSeguir() {
-    var btn = document.getElementById("btnSeguir");
-    if (btn.innerHTML == "Seguir") {
-      btn.innerHTML = "Dejar de Seguir";
-      btn.classList.add("Siguiendo");
-    } else {
-      btn.innerHTML = "Seguir";
-      btn.classList.remove("Siguiendo");
-    }
-  }
+appGlobo.mount('#app');
   var Usuario = "";
   var Comentarios = []
 
